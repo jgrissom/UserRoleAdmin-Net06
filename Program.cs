@@ -13,6 +13,7 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<AppIdentityDbContext>(options => options.UseSqlServer(configuration["Data:AppIdentity:ConnectionString"]));
 builder.Services.AddIdentity<AppUser, IdentityRole>(opts =>
     {
+        opts.User.RequireUniqueEmail = true;
         opts.Password.RequiredLength = 6;
         opts.Password.RequireNonAlphanumeric = false;
         opts.Password.RequireLowercase = false;
