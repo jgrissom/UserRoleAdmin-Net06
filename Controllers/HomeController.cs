@@ -17,6 +17,7 @@ public class HomeController : Controller
         }
 
     public ViewResult Index() => View(userManager.Users);
+    public ViewResult Create() => View();
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
     public IActionResult Error()
